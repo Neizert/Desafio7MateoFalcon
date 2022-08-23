@@ -1,12 +1,15 @@
 .header{
     grid-area: header;
 }
-.titulo{
-    grid-area: titulo;
-    background-image:  linear-gradient(to right,$color_fondo );
+.flexcenter{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.titulo{
+    grid-area: titulo;
+    background-image:  linear-gradient(to right,$color_fondo );
+    @extend .flexcenter;
 }
 
 .main{
@@ -20,21 +23,15 @@
 
 .main-titulo{
     grid-area: titulo;
-    display: flex;
-    justify-content: center;
-    align-items: center;   
+    @extend .flexcenter;  
 }
 .main-info{
     grid-area: info;
-    display: flex;
-    justify-content: center;
-    align-items: center;   
+    @extend .flexcenter;  
 }
 .main-img{
     grid-area: imagen;
-    display: flex;
-    align-items: center;
-    align-content: center;
+    @extend .flexcenter;
     
 }
 
@@ -105,16 +102,7 @@
                              "info"
                              "imagen";                      
      }
-    .main-titulo{
-        display: flex;
-        justify-content: center;
-        align-items: center;    
-    }
-    .main-info{
-        display: flex;
-        justify-content: center;
-        align-items: center;   
-    }
+
 
 
 }

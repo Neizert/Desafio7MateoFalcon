@@ -89,33 +89,32 @@
 }
 /* SABORES */
 /* CONTACTO */
-.cont-form{
+
+@mixin formulario ($direccion, $margent, $margenb, $alineacion) {
     display: flex;
-    flex-direction: column;
+    flex-direction: $direccion;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20rem;
+    justify-content: $alineacion;
+    margin-top: $margent;
+    margin-bottom: $margenb;
+}
+
+.cont-form{
+    @include formulario(column, 0, 20rem, center)
+
     .datosform{
-        display: flex;
-        margin-top: 1rem;
-        
+        @include formulario(row, 1rem, 0, center)
         gap: 1rem;
     }
     .textform{
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
+        @include formulario(column, 10px, 0, center)
         gap: 10px;
         
     }
     .contact{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        @include formulario(row, 4rem, 0, space-between)
         gap: 20rem;
         padding: 0rem 10rem;
-        margin-top: 4rem;
         width: 100%;
     }
     .contact-date{
